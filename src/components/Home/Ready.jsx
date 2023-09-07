@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useApiData } from "../context/ApiDataContext";
 
 const Ready = () => {
-  const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { inputValue, setInputValue,fetchApiData } = useApiData();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch(`https://jsonplaceholder.typicode.com/posts/${inputValue}`)
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setTimeout(() => {
-          setIsLoading(false);
-          navigate("/logo-master");
-        }, 10000);
-      });
+    fetchApiData(inputValue)
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/logo-master");
+    }, 10000);
+    console.log(inputValue, "pppp");
   };
 
   return (
