@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Ready = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    fetch(`https://jsonplaceholder.typicode.com/posts/${inputValue}`)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setTimeout(() => {
+          setIsLoading(false);
+          navigate("/logo-master");
+        }, 10000);
+      });
+  };
+
   return (
     <div className="ready">
       <div className="container">
@@ -17,9 +36,18 @@ const Ready = () => {
           </svg>
         </div>
         <div className="formCall mx-auto">
-          <form action="">
-            <input type="text" name="" />
-            <button type="submit">Make API Call</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            {isLoading ? (
+              <div className="spinner-border text-light" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            ) : (
+              <button type="submit">Make API Call</button>
+            )}
           </form>
         </div>
         <div>
