@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="text-center d-flex justify-content-center gap-3 mb-3">
+        <div className="text-center d-flex justify-content-center align-items-center gap-3 mb-3">
           <a href="#">
             <img src={twitter} alt="twitter" />
           </a>
