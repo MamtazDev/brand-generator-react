@@ -5,16 +5,16 @@ import { useApiData } from "../context/ApiDataContext";
 const Ready = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { inputValue, setInputValue,fetchApiData } = useApiData();
+  const { inputValue, setInputValue, fetchApiData } = useApiData();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetchApiData(inputValue)
+    fetchApiData(inputValue);
     setTimeout(() => {
       setIsLoading(false);
       navigate("/logo-master");
-    }, 10000);
+    }, 3000);
     console.log(inputValue, "pppp");
   };
 

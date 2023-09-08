@@ -23,7 +23,7 @@ const GenerateLogo = () => {
         setTimeout(() => {
           setIsLoading(false);
           navigate("/final-logo");
-        }, 10000);
+        }, 3000);
       });
   };
   return (
