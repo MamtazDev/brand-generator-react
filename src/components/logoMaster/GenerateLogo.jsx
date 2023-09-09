@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useApiData } from "../context/ApiDataContext";
 import { useNavigate } from "react-router-dom";
 
-const GenerateLogo = () => {
+const GenerateLogo = ({ values }) => {
   const { inputValue } = useApiData();
   const navigate = useNavigate();
   const [companyValue, setCompanyValue] = useState("");
@@ -15,7 +15,7 @@ const GenerateLogo = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ companyValue, inputValue }),
+      body: JSON.stringify({ companyValue, inputValue, values }),
     })
       .then((response) => response.json())
       .then((json) => {
