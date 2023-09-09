@@ -8,7 +8,7 @@ const Preference = ({ values, handleDislike, handleLike }) => {
       <div className="container">
         <h2 className="text-dark">Give us your preferences</h2>
         <div className="row gy-3">
-          {values.map((value, index) => (
+          {values?.map((value, index) => (
             <div key={index} className="col-6 position-relative">
               <img
                 className="preferenceImg img-fluid"
