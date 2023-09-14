@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MasterBanner from "./MasterBanner";
 import LogoHeader from "./LogoHeader";
-import GenerateLogo from "./GenerateLogo";
+// import GenerateLogo from "./GenerateLogo";
 import Describe from "./Describe";
 import Preference from "./Preference";
 import Review from "./Review";
@@ -26,7 +26,7 @@ const LogoMasterPage = () => {
     <div>
       <LogoHeader />
       <MasterBanner />
-      <GenerateLogo values={values} />
+      {/* <GenerateLogo values={values} /> */}
       <Describe />
       <Preference
         values={values}
