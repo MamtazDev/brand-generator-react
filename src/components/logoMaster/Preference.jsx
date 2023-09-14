@@ -23,13 +23,13 @@ const Preference = ({ values, handleDislike, handleLike }) => {
                   onClick={() => handleLike(index)}
                   className={`${
                     value === 1 ? "text-danger" : "text-secondary"
-                  } fa-solid fa-heart bg-white p-2 rounded-circle fs-6`}
+                  } fa-solid fa-heart bg-white p-2 rounded-circle fs-6 pointer`}
                 ></i>
                 <i
                   onClick={() => handleDislike(index)}
                   className={`${
                     value === -1 ? "text-danger" : "text-secondary"
-                  } fa-solid fa-heart-crack bg-white p-2 rounded-circle fs-6`}
+                  } fa-solid fa-heart-crack bg-white p-2 rounded-circle fs-6 pointer`}
                 ></i>
               </div>
             </div>
