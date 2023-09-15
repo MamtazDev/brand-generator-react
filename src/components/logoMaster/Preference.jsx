@@ -71,7 +71,7 @@ const Preference = ({ values, handleDislike, handleLike }) => {
               </div>
             ) : (
               <button
-                className="text-white px-3 py-2 rounded"
+                className="generate_btn"
                 style={{ background: "#007bff" }}
               >
                 Generate Final Logo
