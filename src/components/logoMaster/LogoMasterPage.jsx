@@ -24,16 +24,16 @@ const LogoMasterPage = () => {
   };
   return (
     <div>
-      <LogoHeader />
-      <MasterBanner />
+      {/* <LogoHeader /> */}
+      {/* <MasterBanner /> */}
       {/* <GenerateLogo values={values} /> */}
-      <Describe />
+      {/* <Describe /> */}
       <Preference
         values={values}
         handleLike={handleLike}
         handleDislike={handleDislike}
       />
-      <Review />
+      {/* <Review /> */}
       <LogoFooter />
     </div>
   );

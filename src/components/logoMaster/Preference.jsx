@@ -30,7 +30,7 @@ const Preference = ({ values, handleDislike, handleLike }) => {
   return (
     <div className="preference">
       <div className="container">
-        <h2 className="text-dark">Give us your preferences</h2>
+        <h2 className="text-dark">Your Possible Logos</h2>
         <form onSubmit={handleSubmit}>
           <div className="row gy-3">
             {values?.map((value, index) => (
@@ -47,14 +47,18 @@ const Preference = ({ values, handleDislike, handleLike }) => {
                   <i
                     onClick={() => handleLike(index)}
                     className={`${
-                      value === 1 ? "text-danger" : "text-secondary"
-                    } fa-solid fa-heart bg-white p-2 rounded-circle fs-6 pointer`}
+                      value === 1
+                        ? "text-white bg-danger"
+                        : "text-danger bg-white"
+                    } fa-solid fa-heart py-1 px-3 rounded-circle fs-6 pointer`}
                   ></i>
                   <i
                     onClick={() => handleDislike(index)}
                     className={`${
-                      value === -1 ? "text-danger" : "text-secondary"
-                    } fa-solid fa-heart-crack bg-white p-2 rounded-circle fs-6 pointer`}
+                      value === -1
+                        ? "text-white bg-danger"
+                        : "text-danger bg-white"
+                    } fa-solid fa-heart-crack  py-1 px-3 rounded-circle fs-6 pointer`}
                   ></i>
                 </div>
               </div>
